@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: lipoxin-landing
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: GOOGLE_CLIENT_EMAIL
+        sync: false
+      - key: GOOGLE_PRIVATE_KEY
+        sync: false
+      - key: SPREADSHEET_ID
+        sync: false
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: lipoxin-redis
+          property: connectionString
+    autoDeploy: true
+
+  - type: redis
+    name: lipoxin-redis
+    plan: free
+    ipAllowList: [] # Permitir todas las IPs
+    maxmemoryPolicy: noeviction # Política de memoria para Redis
