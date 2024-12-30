@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lipoxin-landing
+    name: lipoxin2
     env: node
     plan: free
     buildCommand: npm install
@@ -22,7 +22,6 @@ services:
           name: lipoxin-redis
           property: connectionString
     autoDeploy: true
-
   - type: redis
     name: lipoxin-redis
     plan: free

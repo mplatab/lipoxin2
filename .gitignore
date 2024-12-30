@@ -19,3 +19,5 @@ Thumbs.db
 # Build
 dist/
 build/
+
+credentials.json
