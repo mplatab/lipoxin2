@@ -28,7 +28,7 @@ requiredEnvVars.forEach(varName => {
 
 // Inicializar la aplicación
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Crear cola para formularios
 const formQueue = createQueue('form-submissions');
